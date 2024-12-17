@@ -46,10 +46,14 @@ Output each field value, including example sentences, separated by "|||".
 - Ensure that sentences reflect diverse, relatable topics and convey human experiences.
 - The third sentence should provide engaging and complex scenarios without overcomplicating the language.`;
 
-const testingWords = ["暴れる", "脂", "あぶる", "雨戸", "甘やかす"];
+const testingWords = ["わりあいに", "割算", "割と", "割引", "椀", "ワンピース"];
 
-async function testWriting() {
-  testingWords.forEach(async (word) => {
+async function deckWriting(inputData, file) {
+  const total = inputData.length;
+
+  for (let i = 0; i < total; i++) {
+    const word = inputData[i];
+
     const cardDataRaw = await generateGPTResponse({
       functionalityPrompt: PROMPT,
       input: word,
@@ -57,8 +61,11 @@ async function testWriting() {
 
     const csvRow = convertRawResultToCSVRow(cardDataRaw);
 
-    testFile.write(`${csvRow}\n`);
-  });
-}
+    file.appendFile(`${csvRow}\n`);
 
-// testWriting();
+    // Log progress as a percentage
+    console.log(
+      `Progress: ${i + 1}/${total} (${Math.round(((i + 1) / total) * 100)}%)`
+    );
+  }
+}
