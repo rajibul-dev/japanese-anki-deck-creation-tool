@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import { generateGPTResponse } from "./openAIConfig.js";
 import { convertRawResultToCSVRow } from "./utils/csvHelpers.js";
+import n2VocabRemaining from "./card-inputs/n2VocabRemaining.js";
 
 const N2_VOCAB_REMAINING_FILE = await fs.open(
   "./cooked-csvs/N2-vocab-remainings.csv",
@@ -69,3 +70,5 @@ async function deckWriting(inputData, file) {
     );
   }
 }
+
+// deckWriting(n2VocabRemaining, N2_VOCAB_REMAINING_FILE); DONE
