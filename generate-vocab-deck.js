@@ -1,18 +1,6 @@
-import OpenAI from "openai";
+import fs from "fs";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const response = await openai.chat.completions.create({
-  model: "gpt-4o-mini",
-  messages: [
-    {
-      role: "system",
-      content: [
-        {
-          type: "text",
-          text: `Provide clean, formatted outputs for a Japanese word, including its Kanji, Kana reading, Part of Speech (POS), and English translation. Additionally, create three example sentences with ascending complexity to reflect real-life human experiences. These sentences should be learner-friendly, realistic, and engaging.
+const PROMPT = `Provide clean, formatted outputs for a Japanese word, including its Kanji, Kana reading, Part of Speech (POS), and English translation. Additionally, create three example sentences with ascending complexity to reflect real-life human experiences. These sentences should be learner-friendly, realistic, and engaging.
 
 Ensure that all output is formatted with field values separated by "|||" without any headings or extra formatting.
 
@@ -48,37 +36,4 @@ Output each field value, including example sentences, separated by "|||".
 
 - Avoid overuse of a single theme across example sentences for diversity.
 - Ensure that sentences reflect diverse, relatable topics and convey human experiences.
-- The third sentence should provide engaging and complex scenarios without overcomplicating the language.`,
-        },
-      ],
-    },
-    {
-      role: "user",
-      content: [
-        {
-          type: "text",
-          text: "憧れる",
-        },
-      ],
-    },
-    {
-      role: "assistant",
-      content: [
-        {
-          type: "text",
-          text: "憧れる|||あこがれる|||v|||to long for; to yearn for; to admire|||彼女はずっと有名な歌手に憧れている。|||私は大学に進学することに憧れて、毎日頑張って勉強している。|||彼は世界一周旅行に憧れを抱き、貯金を始め、異文化の人々と出会うための準備を着々と進めている。",
-        },
-      ],
-    },
-  ],
-  response_format: {
-    type: "text",
-  },
-  temperature: 1,
-  max_completion_tokens: 1024,
-  top_p: 1,
-  frequency_penalty: 0,
-  presence_penalty: 0,
-});
-
-console.log(response.choices[0].message);
+- The third sentence should provide engaging and complex scenarios without overcomplicating the language.`;
