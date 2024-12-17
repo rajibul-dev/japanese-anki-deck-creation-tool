@@ -1,4 +1,12 @@
-import fs from "fs";
+import fs from "node:fs/promises";
+import { generateGPTResponse } from "./openAIConfig.js";
+import { convertRawResultToCSVRow } from "./utils/csvHelpers.js";
+
+const N2_VOCAB_REMAINING_FILE = await fs.open(
+  "./cooked-csvs/N2-vocab-remainings.csv",
+  "w"
+);
+const testFile = await fs.open("./cooked-csvs/test.csv", "w");
 
 const PROMPT = `Provide clean, formatted outputs for a Japanese word, including its Kanji, Kana reading, Part of Speech (POS), and English translation. Additionally, create three example sentences with ascending complexity to reflect real-life human experiences. These sentences should be learner-friendly, realistic, and engaging.
 
@@ -37,3 +45,20 @@ Output each field value, including example sentences, separated by "|||".
 - Avoid overuse of a single theme across example sentences for diversity.
 - Ensure that sentences reflect diverse, relatable topics and convey human experiences.
 - The third sentence should provide engaging and complex scenarios without overcomplicating the language.`;
+
+const testingWords = ["暴れる", "脂", "あぶる", "雨戸", "甘やかす"];
+
+async function testWriting() {
+  testingWords.forEach(async (word) => {
+    const cardDataRaw = await generateGPTResponse({
+      functionalityPrompt: PROMPT,
+      input: word,
+    });
+
+    const csvRow = convertRawResultToCSVRow(cardDataRaw);
+
+    testFile.write(`${csvRow}\n`);
+  });
+}
+
+// testWriting();

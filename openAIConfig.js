@@ -4,7 +4,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function generateGPTResponse({ input, prompt }) {
+export async function generateGPTResponse({ input, functionalityPrompt }) {
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
@@ -13,7 +13,7 @@ export async function generateGPTResponse({ input, prompt }) {
         content: [
           {
             type: "text",
-            text: prompt,
+            text: functionalityPrompt,
           },
         ],
       },
@@ -37,5 +37,5 @@ export async function generateGPTResponse({ input, prompt }) {
     presence_penalty: 0,
   });
 
-  return response.choices[0].message;
+  return response.choices[0].message.content;
 }

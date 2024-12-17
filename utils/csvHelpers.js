@@ -5,3 +5,10 @@ export function escapeCSV(field) {
 
   return field;
 }
+
+export function convertRawResultToCSVRow(rawData) {
+  return rawData
+    .split("|||")
+    .map((field) => escapeCSV(field))
+    .join(",");
+}
