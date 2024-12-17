@@ -12,7 +12,43 @@ const response = await openai.chat.completions.create({
       content: [
         {
           type: "text",
-          text: "Provide clean, formatted outputs for a Japanese word, including its Kanji, Kana reading, Part of Speech (POS), and English translation. Additionally, create three example sentences with ascending complexity to reflect real-life human experiences. These sentences should be learner-friendly, realistic, and engaging.\n\nEnsure that all output is formatted with field values separated by \"|||\" without any headings or extra formatting. \n\n# Steps\n\n1. **Kanji:** Identify and extract the Kanji form of the word.\n2. **Kana (Reading):** Provide the Kana representation of the word.\n3. **POS (Part of Speech):** Determine the part of speech using shorthand notation (e.g., 'n' for noun, 'adj' for adjective).\n4. **Translation (Meaning in English):** Translate the word into English.\n5. **Example Sentences:**\n   - Create a simple sentence for beginners.\n   - Develop a medium-complexity sentence for intermediate learners.\n   - Craft a complex, vivid, and engaging sentence for advanced learners, capturing diverse and immersive contexts. Complex but not complicated.\n\n# Output Format\n\nOutput each field value, including example sentences, separated by \"|||\".\n\n# Examples\n\n**Input:** 時速\n\n**Output Example:**\n\n時速|||じそく|||n|||speed per hour (speed in terms of distance covered per hour)|||車の時速が速いと、目的地まで早く到着できる。|||新幹線の時速が300キロだと聞いて、とても驚いた。|||遠い彼の故郷に住む家族を訪ねるために、高速道路を利用し時速120キロで走る車の窓から、広がる風景を楽しんだ。(Note: This sentence is intentionally longer and more descriptive, suitable for an advanced learner.)\n\n**Input:** 明るい\n\n**Output Example:**\n\n明るい|||あかるい|||adj|||bright; cheerful; clear|||部屋の中が明るいと気分も明るくなる。|||彼女の明るい性格のおかげで、どんな場面でも笑顔が絶えない。|||明るい未来を信じて、彼は仕事を辞めて新しい挑戦を始める決心をした。(Note: This sentence should be vivid and immersive, providing a rich context.)\n\n# Notes\n\n- Avoid overuse of a single theme across example sentences for diversity.\n- Ensure that sentences reflect diverse, relatable topics and convey human experiences.\n- The third sentence should provide engaging and complex scenarios without overcomplicating the language.",
+          text: `Provide clean, formatted outputs for a Japanese word, including its Kanji, Kana reading, Part of Speech (POS), and English translation. Additionally, create three example sentences with ascending complexity to reflect real-life human experiences. These sentences should be learner-friendly, realistic, and engaging.
+
+Ensure that all output is formatted with field values separated by "|||" without any headings or extra formatting.
+
+# Steps
+
+1. **Kanji:** Identify and extract the Kanji form of the word.
+2. **Kana (Reading):** Provide the Kana representation of the word.
+3. **POS (Part of Speech):** Determine the part of speech using shorthand notation (e.g., 'n' for noun, 'adj' for adjective).
+4. **Translation (Meaning in English):** Translate the word into English.
+5. **Example Sentences:**
+   - Create a simple sentence for beginners.
+   - Develop a medium-complexity sentence for intermediate learners.
+   - Craft a complex, vivid, and engaging sentence for advanced learners, capturing diverse and immersive contexts. Complex but not complicated.
+6. **Example Sentences English Translations:** For the three sentences that you generated, provide the English translation for each.
+
+Output each field value, including example sentences, separated by "|||".
+
+# Examples
+
+**Input:** 時速
+
+**Output Example:**
+
+時速|||じそく|||n|||speed per hour (speed in terms of distance covered per hour)|||車の時速が速いと、目的地まで早く到着できる。|||The speed of the car is fast, so you can arrive at your destination quickly.|||新幹線の時速が300キロだと聞いて、とても驚いた。|||I was shocked to hear that the bullet train travels at 300 km/h.|||遠い彼の故郷に住む家族を訪ねるために、高速道路を利用し時速120キロで走る車の窓から、広がる風景を楽しんだ。|||I enjoyed the landscape from the window of a car driving at 120 km/h on the highway to visit the family living in his distant hometown.
+
+**Input:** 明るい
+
+**Output Example:**
+
+明るい|||あかるい|||adj|||bright; cheerful|||彼女の部屋は太陽の光で明るい。|||Her room is bright with sunlight.|||新しい先生はとても明るく、学生たちは喜んでいる。|||The new teacher is very cheerful, and the students are happy.|||彼女の明るい性格は、困難な時でも周りの人々に希望をもたらし、前向きな影響を与えている。|||Her bright personality brings hope and has a positive influence on those around, even in difficult times.
+
+# Notes
+
+- Avoid overuse of a single theme across example sentences for diversity.
+- Ensure that sentences reflect diverse, relatable topics and convey human experiences.
+- The third sentence should provide engaging and complex scenarios without overcomplicating the language.`,
         },
       ],
     },
@@ -39,8 +75,10 @@ const response = await openai.chat.completions.create({
     type: "text",
   },
   temperature: 1,
-  max_completion_tokens: 2048,
+  max_completion_tokens: 1024,
   top_p: 1,
   frequency_penalty: 0,
   presence_penalty: 0,
 });
+
+console.log(response.choices[0].message);
