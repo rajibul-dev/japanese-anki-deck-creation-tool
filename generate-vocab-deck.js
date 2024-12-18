@@ -2,12 +2,13 @@ import fs from "node:fs/promises";
 import { generateGPTResponse } from "./openAIConfig.js";
 import { convertRawResultToCSVRow } from "./utils/csvHelpers.js";
 import n2VocabRemaining from "./card-inputs/n2VocabRemaining.js";
+import n3Vocab from "./card-inputs/n3Vocab.js";
+import n1Vocab from "./card-inputs/n1Vocab.js";
 
-const N2_VOCAB_REMAINING_FILE = await fs.open(
-  "./cooked-csvs/N2-vocab-remainings.csv",
-  "w"
-);
-const testFile = await fs.open("./cooked-csvs/test.csv", "w");
+const N2_VOCAB_REMAINING_FILE_PATH = "./cooked-csvs/N2-vocab-remainings.csv";
+const N3_VOCAB_FILE_PATH = "./cooked-csvs/N3-vocab.csv";
+const N1_VOCAB_FILE_PATH = "./cooked-csvs/N1-vocab.csv";
+const testFilePath = ("./cooked-csvs/test.csv", "w");
 
 const PROMPT = `Provide clean, formatted outputs for a Japanese word, including its Kanji, Kana reading, Part of Speech (POS), and English translation. Additionally, create three example sentences with ascending complexity to reflect real-life human experiences. These sentences should be learner-friendly, realistic, and engaging.
 
@@ -49,7 +50,8 @@ Output each field value, including example sentences, separated by "|||".
 
 const testingWords = ["わりあいに", "割算", "割と", "割引", "椀", "ワンピース"];
 
-async function deckWriting(inputData, file) {
+async function deckWriting(inputData, filePath) {
+  const file = await fs.open(filePath, "w");
   const total = inputData.length;
 
   for (let i = 0; i < total; i++) {
@@ -69,6 +71,11 @@ async function deckWriting(inputData, file) {
       `Progress: ${i + 1}/${total} (${Math.round(((i + 1) / total) * 100)}%)`
     );
   }
+
+  await file.close(); // Ensure file is closed after completion
+  console.log("Operation successful!");
 }
 
 // deckWriting(n2VocabRemaining, N2_VOCAB_REMAINING_FILE); DONE
+// deckWriting(n3Vocab, N3_VOCAB_FILE_PATH); DONE
+// deckWriting(n1Vocab, N1_VOCAB_FILE); DONE
