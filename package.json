@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cli-progress": "^3.12.0",
     "openai": "^4.76.3"
   }
 }
