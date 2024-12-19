@@ -26,6 +26,25 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
     let whatWeKnowAboutTheCard = "";
     let fieldsToGenerate = "";
 
+    // Check if every field is filled (ignoring 'note' and 'lovable_video_reference')
+    const areAllFieldsCovered = fieldKeys
+      .filter(
+        (key) =>
+          key !== "lovable_video_reference" &&
+          key !== "note" &&
+          !key.includes("_furigana")
+      ) // Exclude ignored fields
+      .every((key) => {
+        const value = note.fields[key].value;
+        return Boolean(value); // Check if the field has a truthy value
+      });
+
+    // If all fields are covered, skip to the next iteration
+    if (areAllFieldsCovered) {
+      console.log("All fields are covered! Skipping to the next card.");
+      continue;
+    }
+
     for (const key of fieldKeys) {
       const value = note.fields[key].value;
 
