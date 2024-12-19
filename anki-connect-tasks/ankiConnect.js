@@ -42,5 +42,5 @@ export async function updateNoteFields(noteId, updatedFields) {
     throw new Error(result.error);
   }
 
-  console.log(result);
+  // console.log(result);
 }

@@ -60,8 +60,8 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
       if (Object.keys(updatedFields).length > 0) {
         await updateNoteFields(note.noteId, updatedFields);
 
-        console.log(prompt);
-        console.table(updatedFields);
+        // console.log(prompt);
+        // console.table(updatedFields);
 
         // Log progress as a percentage
         console.log(
