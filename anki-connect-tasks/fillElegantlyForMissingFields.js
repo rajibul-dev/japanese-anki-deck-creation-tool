@@ -126,11 +126,27 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
 // processNoteDeckAndFill({
 //   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Grammar",
 // });
+// processNoteDeckAndFill({
+//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
+// });
 
 // yet to do
-processNoteDeckAndFill({
-  noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
-});
+(async () => {
+  await processNoteDeckAndFill({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Vocabulary",
+  });
+  console.log("Completed processing JLPT N3 Vocabulary");
+
+  await processNoteDeckAndFill({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N2 Vocabulary",
+  });
+  console.log("Completed processing JLPT N2 Vocabulary");
+
+  await processNoteDeckAndFill({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N1 Vocabulary",
+  });
+  console.log("Completed processing JLPT N1 Vocabulary");
+})();
 
 // a single note looks like
 
