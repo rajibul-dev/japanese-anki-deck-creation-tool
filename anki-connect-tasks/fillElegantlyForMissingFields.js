@@ -100,11 +100,14 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
     } catch (error) {
       console.error(error.message);
 
-      const reportFileHandle = fs.open(
-        "./txt-records/failed-automation-manager.txt"
+      const reportFileHandle = await fs.open(
+        "../txt-records/failed-automation-manager.txt",
+        "w"
       );
 
-      reportFileHandle.appendFile(`${prompt}\n----------------------------\n`);
+      await reportFileHandle.appendFile(
+        `${prompt}\n----------------------------\n`
+      );
 
       await reportFileHandle.close();
     }
@@ -125,9 +128,9 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
 // });
 
 // yet to do
-// processNoteDeckAndFill({
-//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
-// });
+processNoteDeckAndFill({
+  noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
+});
 
 // a single note looks like
 
