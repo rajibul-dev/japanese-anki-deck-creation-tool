@@ -1,4 +1,6 @@
-import fillingMissingFields from "../functionality-prompts/fillingMissingFields.js";
+import fillingMissingFields, {
+  fixNotesAndExplanationFieldsInJapanese,
+} from "../functionality-prompts/fillingMissingFields.js";
 import { generateGPTResponse } from "../openAIConfig.js";
 import {
   getFullNoteData,
@@ -69,6 +71,7 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
     try {
       const response = await generateGPTResponse({
         functionalityPrompt: fillingMissingFields,
+        // functionalityPrompt: fixNotesAndExplanationFieldsInJapanese,
         input: prompt,
         responseFormat: "json_object",
       });
@@ -88,6 +91,11 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
             ((i + 1) / total) * 100
           )}%)`
         );
+      } else {
+        console.log(
+          "Nothing to change in this card, skipping to the next one."
+        );
+        continue;
       }
     } catch (error) {
       console.error(error.message);
@@ -105,9 +113,21 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
   console.log("Operation completed!");
 }
 
-processNoteDeckAndFill({
-  noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N5 Vocabulary",
-});
+// done
+// processNoteDeckAndFill({
+//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N5 Vocabulary",
+// });
+// processNoteDeckAndFill({
+//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N5 Grammar",
+// });
+// processNoteDeckAndFill({
+//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Grammar",
+// });
+
+// yet to do
+// processNoteDeckAndFill({
+//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
+// });
 
 // a single note looks like
 
