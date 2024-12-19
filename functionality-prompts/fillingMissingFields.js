@@ -44,7 +44,7 @@ Here, the note is omitted as it's not relevant.
 
 # Please Note
 
-- If you're dealing with a Grammar type card, make sure to provide the 'explanation' and 'note' field in English and not Japanese.
+- If you're dealing with a Grammar type card, make sure to provide the 'explanation' and 'note' field in English and not Japanese. Similarly, 'note' in vocabulary card would also be in English.
 - Ensure the complexity of sentences is tailored to the intended learner level.
 - Provide a clear pairing of Japanese example sentences with accurate English translations for reference.
 - The fields are all lower cased as you can tell from the example, so make sure you define the keys exactly like how the prompt will request you.
@@ -63,4 +63,6 @@ The JSON Object should be like:
 }
 
 If there's no notes or explanation fields or the value is "", don't add that into the JSON object. That can mean, the object can have only one key value pair possibility, if both of them aren't there in the prompt, return to me an empty object {}. If the 'note' and 'explanation' is already in English, don't add them in the your JSON object, which if both fields are in English, should cause you to provide an empty object.
+
+Similarly, I can give you vocabulary card which doesn't have the 'explanation' field but has the 'note' field, please turn it into English. Same rules, if the note field is already in English or there's nothing in the note field, provide empty object {}.
 `;
