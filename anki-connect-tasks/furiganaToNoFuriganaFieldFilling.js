@@ -1,4 +1,8 @@
-import { ankiConnect, getFullNoteData, getNoteIDs } from "./ankiConnect.js";
+import {
+  getFullNoteData,
+  getNoteIDs,
+  updateNoteFields,
+} from "./ankiConnect.js";
 
 // Helper function to remove furigana and clean up spaces
 function stripFurigana(text) {
@@ -9,26 +13,6 @@ function stripFurigana(text) {
   strippedText = strippedText.replace(/\s+/g, "").trim();
 
   return strippedText;
-}
-
-async function updateNoteFields(noteId, updatedFields) {
-  const response = await fetch("http://localhost:8765", {
-    method: "POST",
-    body: JSON.stringify({
-      action: "updateNoteFields",
-      version: 6,
-      params: {
-        note: {
-          id: noteId,
-          fields: updatedFields,
-        },
-      },
-    }),
-  });
-  const result = await response.json();
-  if (result.error) {
-    throw new Error(result.error);
-  }
 }
 
 async function processNotesByNoteTypeMultiFields(noteType, fieldPairs) {
@@ -90,7 +74,7 @@ const fieldPairs = [
   ["ex10_ja_furigana", "ex10_ja"],
 ];
 
-processNotesByNoteTypeMultiFields(
-  "passjapanesetest.com: JLPT Grammar",
-  fieldPairs
-);
+// processNotesByNoteTypeMultiFields(
+//   "passjapanesetest.com: JLPT Grammar",
+//   fieldPairs
+// );
