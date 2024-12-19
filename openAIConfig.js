@@ -4,7 +4,11 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function generateGPTResponse({ input, functionalityPrompt }) {
+export async function generateGPTResponse({
+  input,
+  functionalityPrompt,
+  responseFormat = "text",
+}) {
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
@@ -28,7 +32,7 @@ export async function generateGPTResponse({ input, functionalityPrompt }) {
       },
     ],
     response_format: {
-      type: "text",
+      type: responseFormat,
     },
     temperature: 1,
     max_completion_tokens: 1024,
