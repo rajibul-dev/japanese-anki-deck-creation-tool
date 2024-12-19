@@ -44,6 +44,7 @@ Here, the note is omitted as it's not relevant.
 
 # Please Note
 
+- If you're dealing with a Grammar type card, make sure to provide the 'explanation' and 'note' field in English and not Japanese.
 - Ensure the complexity of sentences is tailored to the intended learner level.
 - Provide a clear pairing of Japanese example sentences with accurate English translations for reference.
 - The fields are all lower cased as you can tell from the example, so make sure you define the keys exactly like how the prompt will request you.
@@ -52,3 +53,14 @@ Here, the note is omitted as it's not relevant.
 - Grammar type cards can have 10 example fields, I want most of them to be beginner-friendly stretching to intermediate and upper-intermediate. Don't make these long, little big mid sized is good, but don't treat these as the vocab deck ex3s that are long.
 - You must stop and think whether a the 'note' should be important for the instence. And then provide it if it is important.
 - While in instruction I gave 3 example possibility as max, big amounts like 10 example field request can occur and you need to perfectly fill all 10. Make sure all the sentences are not too similar to each other, for reading comprehension, you can have little similar as that can rather help than all random. The examples can ascend in length depending on the number of sentences, but too long would be bad, mid long is good, avoiding one liner short all over is what I want you to avoid.`;
+
+export const fixNotesAndExplanationFieldsInJapanese = `Turn the 'explanation' and 'note' fields in English for my Japanese learning Anki deck, I will provide with the card details, you have to provide the 'note' and 'explanation' fields in english as a JSON object with required keys and string values.
+
+The JSON Object should be like:
+{
+  explanation: <your provided explanation in English>
+  note: <your provided note in English>
+}
+
+If there's no notes or explanation fields or the value is "", don't add that into the JSON object. That can mean, the object can have only one key value pair possibility, if both of them aren't there in the prompt, return to me an empty object {}. If the 'note' and 'explanation' is already in English, don't add them in the your JSON object, which if both fields are in English, should cause you to provide an empty object.
+`;
