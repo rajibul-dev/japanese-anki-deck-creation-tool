@@ -51,17 +51,13 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
     for (const key of fieldKeys) {
       const value = note.fields[key].value;
 
-      if (
-        value === "" &&
-        key !== "lovable_video_reference" &&
-        !key.includes("_furigana")
-      ) {
-        fieldsToGenerate += `${key}\n`;
-      } else if (
-        value !== "" &&
-        key !== "lovable_video_reference" &&
-        !key.includes("_furigana")
-      ) {
+      if (key !== "lovable_video_reference" && !key.includes("_furigana")) {
+        if (value === "") {
+          fieldsToGenerate += `${key}\n`;
+        } else {
+          whatWeKnowAboutTheCard += `${key}: ${value}\n`;
+        }
+      } else if (key === "grammar_furigana" && value !== "") {
         whatWeKnowAboutTheCard += `${key}: ${value}\n`;
       }
     }
@@ -143,6 +139,11 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
     noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N1 Vocabulary",
   });
   console.log("Completed processing JLPT N1 Vocabulary");
+
+  await processNoteDeckAndFill({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Grammar",
+  });
+  console.log("Completed processing JLPT N3 Grammar");
 })();
 
 // a single note looks like
