@@ -5,7 +5,7 @@ import {
 } from "./ankiConnect.js";
 
 function slashToLineBreak(str) {
-  return str.replaceAll("/", "<br>");
+  return str.replaceAll("<br>", "/<br>");
 }
 
 async function fromSlashToLineBreakOnFrontField(noteType) {
@@ -23,7 +23,7 @@ async function fromSlashToLineBreakOnFrontField(noteType) {
   let count = 0;
 
   for (const note of notes) {
-    if (note.fields.grammar.value.includes("/")) {
+    if (note.fields.grammar.value.includes("<br>")) {
       const grammarField = note.fields.grammar.value;
       const grammarFuriganaField = note.fields.grammar_furigana.value;
 
