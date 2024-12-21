@@ -74,7 +74,14 @@ const fieldPairs = [
   ["ex10_ja_furigana", "ex10_ja"],
 ];
 
+const grammarFuriganaFieldPair = [["grammar_furigana", "grammar"]];
+
 // processNotesByNoteTypeMultiFields(
 //   "passjapanesetest.com: JLPT Grammar",
 //   fieldPairs
 // );
+
+processNotesByNoteTypeMultiFields(
+  "passjapanesetest.com: JLPT Grammar",
+  grammarFuriganaFieldPair
+);
