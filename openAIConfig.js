@@ -35,7 +35,7 @@ export async function generateGPTResponse({
       type: responseFormat,
     },
     temperature: 1,
-    max_completion_tokens: 2000,
+    max_completion_tokens: 4000,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -43,3 +43,5 @@ export async function generateGPTResponse({
 
   return response.choices[0].message.content;
 }
+
+// had to use gpt-4o model for creating the grammar decks with 10 example sentences
