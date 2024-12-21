@@ -57,8 +57,6 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
         } else {
           whatWeKnowAboutTheCard += `${key}: ${value}\n`;
         }
-      } else if (key === "grammar_furigana" && value !== "") {
-        whatWeKnowAboutTheCard += `${key}: ${value}\n`;
       }
     }
 
