@@ -5,6 +5,7 @@ import n2VocabRemaining from "./card-inputs/n2VocabRemaining.js";
 import n3Vocab from "./card-inputs/n3Vocab.js";
 import n1Vocab from "./card-inputs/n1Vocab.js";
 import vocabDeckPrompt from "./functionality-prompts/vocabDeckPrompt.js";
+import { progressLogger } from "./utils/progressLogger.js";
 
 const N2_VOCAB_REMAINING_FILE_PATH = "./cooked-csvs/N2-vocab-remainings.csv";
 const N3_VOCAB_FILE_PATH = "./cooked-csvs/N3-vocab.csv";
@@ -30,9 +31,7 @@ async function deckWriting(systemPrompt, inputData, filePath) {
     file.appendFile(`${csvRow}\n`);
 
     // Log progress as a percentage
-    console.log(
-      `Progress: ${i + 1}/${total} (${Math.round(((i + 1) / total) * 100)}%)`
-    );
+    progressLogger(total, i);
   }
 
   await file.close(); // Ensure file is closed after completion

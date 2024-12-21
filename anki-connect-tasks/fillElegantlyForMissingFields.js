@@ -2,6 +2,7 @@ import fillingMissingFields, {
   fixNotesAndExplanationFieldsInJapanese,
 } from "../functionality-prompts/fillingMissingFields.js";
 import { generateGPTResponse } from "../openAIConfig.js";
+import { progressLogger } from "../utils/progressLogger.js";
 import {
   getFullNoteData,
   getNoteIDs,
@@ -86,11 +87,7 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
         // console.table(updatedFields);
 
         // Log progress as a percentage
-        console.log(
-          `Progress: ${i + 1}/${total} (${Math.round(
-            ((i + 1) / total) * 100
-          )}%)`
-        );
+        progressLogger(total, i);
       } else {
         console.log(
           "Nothing to change in this card, skipping to the next one."
