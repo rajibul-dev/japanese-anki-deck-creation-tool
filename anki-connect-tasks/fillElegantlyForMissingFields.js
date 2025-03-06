@@ -1,6 +1,5 @@
-import fillingMissingFields, {
-  fixNotesAndExplanationFieldsInJapanese,
-} from "../functionality-prompts/fillingMissingFields.js";
+import fs from "node:fs/promises";
+import fillingMissingFields from "../functionality-prompts/fillingMissingFields.js";
 import { generateGPTResponse } from "../openAIConfig.js";
 import { progressLogger } from "../utils/progressLogger.js";
 import {
@@ -8,7 +7,6 @@ import {
   getNoteIDs,
   updateNoteFields,
 } from "./ankiConnect.js";
-import fs from "node:fs/promises";
 
 async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
   // Construct a query to fetch all notes or deck that's specified
