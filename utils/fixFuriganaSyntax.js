@@ -46,9 +46,9 @@ const testCases = [
 ];
 
 // Run the function and format results in a table
-console.table(
-  testCases.map(({ input }) => ({
-    Input: input,
-    Output: fixFuriganaSyntax(input),
-  }))
-);
+// console.table(
+//   testCases.map(({ input }) => ({
+//     Input: input,
+//     Output: fixFuriganaSyntax(input),
+//   }))
+// );
