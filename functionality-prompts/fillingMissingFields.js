@@ -78,3 +78,11 @@ Make sure we don't run into this error when parsing: Unexpected token ']\`', "\`
 {
 "... is not valid JSON
 `;
+
+export const FURIGANA_CORRECTION_PROMPT = `For my Japanese Anki deck, I will be providing you all the fields, and your task is to correct the furigana fields that are incorrect, since they are generated using software that can have wrong furigana.
+
+You have to send a JSON response of it. Keys will be the provided keys inside the input the user provides, and the value will be your fixed furigana.
+
+The furigana follows the ruby syntax. If you are unfamiliar with the rules, check the syntax from the input and try your best to follow where we are putting an extra space, the kanji, the square brackets, etc.
+
+I'll programmatically fix any shortcomings of messing up the syntax, so that's okay.`;
