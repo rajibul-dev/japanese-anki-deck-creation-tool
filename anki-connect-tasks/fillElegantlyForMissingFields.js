@@ -118,29 +118,27 @@ async function processNoteDeckAndFill({ queryType = "deck", noteOrDeckName }) {
 // processNoteDeckAndFill({
 //   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
 // });
+// (async () => {
+//   await processNoteDeckAndFill({
+//     noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Vocabulary",
+//   });
+//   console.log("Completed processing JLPT N3 Vocabulary");
 
-// yet to do
-(async () => {
-  await processNoteDeckAndFill({
-    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Vocabulary",
-  });
-  console.log("Completed processing JLPT N3 Vocabulary");
+//   await processNoteDeckAndFill({
+//     noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N2 Vocabulary",
+//   });
+//   console.log("Completed processing JLPT N2 Vocabulary");
 
-  await processNoteDeckAndFill({
-    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N2 Vocabulary",
-  });
-  console.log("Completed processing JLPT N2 Vocabulary");
+//   await processNoteDeckAndFill({
+//     noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N1 Vocabulary",
+//   });
+//   console.log("Completed processing JLPT N1 Vocabulary");
 
-  await processNoteDeckAndFill({
-    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N1 Vocabulary",
-  });
-  console.log("Completed processing JLPT N1 Vocabulary");
-
-  await processNoteDeckAndFill({
-    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Grammar",
-  });
-  console.log("Completed processing JLPT N3 Grammar");
-})();
+//   await processNoteDeckAndFill({
+//     noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Grammar",
+//   });
+//   console.log("Completed processing JLPT N3 Grammar");
+// })();
 
 // a single note looks like
 
