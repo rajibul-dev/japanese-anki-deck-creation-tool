@@ -93,15 +93,56 @@ async function correctWrongFurigana({ queryType = "deck", noteOrDeckName }) {
   console.log("Operation completed!");
 }
 
-correctWrongFurigana({
-  noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N5 Vocabulary",
-});
-// correctWrongFurigana({
-//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N5 Grammar",
-// });
-// correctWrongFurigana({
-//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Grammar",
-// });
-// correctWrongFurigana({
-//   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
-// });
+(async () => {
+  // VOCABULARY
+  // await correctWrongFurigana({
+  //   noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N5 Vocabulary",
+  // }); // done
+  // console.log("Completed processing JLPT N5 Vocabulary");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Vocabulary",
+  });
+  console.log("Completed processing JLPT N4 Vocabulary");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Vocabulary",
+  });
+  console.log("Completed processing JLPT N3 Vocabulary");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N2 Vocabulary",
+  });
+  console.log("Completed processing JLPT N2 Vocabulary");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N1 Vocabulary",
+  });
+  console.log("Completed processing JLPT N1 Vocabulary");
+
+  // GRAMMAR
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N5 Grammar",
+  });
+  console.log("Completed processing JLPT N5 Grammar");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N4 Grammar",
+  });
+  console.log("Completed processing JLPT N4 Grammar");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N3 Grammar",
+  });
+  console.log("Completed processing JLPT N3 Grammar");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N2 Grammar",
+  });
+  console.log("Completed processing JLPT N2 Grammar");
+
+  await correctWrongFurigana({
+    noteOrDeckName: "The Ultimate Japanese Learning Deck::JLPT N1 Grammar",
+  });
+  console.log("Completed processing JLPT N1 Grammar");
+})();
