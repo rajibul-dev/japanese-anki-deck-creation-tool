@@ -64,7 +64,7 @@
 
   function handleRandomSentenceOnFrontBtn() {
     const randomExampleBtn = document.getElementById("randomExampleButton");
-    document.addEventListener("click", seteRandomExampleOnFront);
+    randomExampleBtn.addEventListener("click", seteRandomExampleOnFront);
   }
   handleRandomSentenceOnFrontBtn();
 
