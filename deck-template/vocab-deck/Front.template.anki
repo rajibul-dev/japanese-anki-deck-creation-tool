@@ -32,7 +32,7 @@
 >
   {{ex1_ja}}
 </div>
-<button id="randomExampleButton" class="btn front">
+<button id="randomExampleButton" class="btn front not-in-back">
   Show another sentence
 </button>
 
