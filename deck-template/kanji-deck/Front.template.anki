@@ -1,0 +1,9 @@
+<span
+  style="
+    font-size: 64px;
+    line-height: 1.3;
+    display: inline-block;
+    font-family: MS Mincho, Noto Serif JP, sans-serif;
+  "
+  >{{kanji}}</span
+>

@@ -1,0 +1,17 @@
+{{FrontSide}}
+
+<br>
+<hr style="margin-bottom: 20px; height:3px;border:none;color:#000;background-color:#000;">
+
+<span style="color:gold; display: inline-block; margin-bottom: 10px;"> {{meaning}}</span><br>
+{{ja_on}}<br>
+{{ja_kun}}
+
+<hr style="margin: 20px 0">
+<span style="display: inline-block; line-height: 1.7;">{{furigana:examples}}</span>
+
+<hr style="margin: 20px 0">
+
+<p style='font-family: Arial; font-size: 22px;'>
+<span style='font-family: Arial;'font-size: 12px;'>Look up on</span> <a href="https://jisho.org/search/{{kanji}}%20%23kanji">Jisho.org</a>
+</p>

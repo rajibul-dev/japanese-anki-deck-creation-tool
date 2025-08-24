@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900&display=swap");
+
+a {
+  color: LightGreen;
+}
+
+.card {
+  font-family: arial;
+  font-size: 24px;
+  text-align: center;
+  color: black;
+  background-color: white;
+}

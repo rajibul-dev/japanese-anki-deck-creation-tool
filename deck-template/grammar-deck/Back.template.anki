@@ -1,0 +1,552 @@
+{{FrontSide}}
+
+<br />
+<hr class="front-seperator" />
+
+{{#explanation}}
+<div>{{explanation}}</div>
+<hr style="margin: 20px 0" />
+{{/explanation}}
+
+<span style="color: gold; line-height: 1.4"> {{meaning}}</span>
+
+<!-- 1 -->
+<div id="sentence1">
+  <div class="btn-on-top-of-border-wrapper">
+    <hr class="line-that-possess-btn" />
+    <button id="sentenceMoreLessBtn" class="btn btn-on-line">
+      Show less examples (showing 10)
+    </button>
+  </div>
+
+  <span id="exampleSentence1">
+    <span class="big-japanese">{{ex1_ja}}</span><br />
+  </span>
+  <span id="exampleSentence1WithFurigana">
+    <span class="big-japanese furigana-space furigana-space"
+      >{{furigana:ex1_ja_furigana}}</span
+    ><br />
+  </span>
+</div>
+<span class="ex-en" style="line-height: 1.4">{{ex1_en}}</span>
+
+<button id="toggleButton1" class="btn">Show Example with Furigana</button>
+
+<!-- 2 -->
+{{#ex2_ja_furigana}}
+<div id="sentence2">
+  <hr style="margin: 20px 0" />
+
+  <span id="exampleSentence2">
+    <span class="big-japanese">{{ex2_ja}}</span><br />
+  </span>
+  <span id="exampleSentence2WithFurigana">
+    <span class="big-japanese furigana-space">{{furigana:ex2_ja_furigana}}</span
+    ><br />
+  </span>
+</div>
+<span class="ex-en" style="line-height: 1.4">{{ex2_en}}</span>
+
+<button id="toggleButton2" class="btn">Show Example with Furigana</button>
+{{/ex2_ja_furigana}}
+
+<!-- 3 -->
+{{#ex3_ja_furigana}}
+<div id="sentence3">
+  <hr style="margin: 20px 0" />
+
+  <span id="exampleSentence3">
+    <span class="big-japanese">{{ex3_ja}}</span><br />
+  </span>
+  <span id="exampleSentence3WithFurigana">
+    <span class="big-japanese furigana-space">{{furigana:ex3_ja_furigana}}</span
+    ><br />
+  </span>
+</div>
+<span class="ex-en" style="line-height: 1.4">{{ex3_en}}</span>
+
+<button id="toggleButton3" class="btn">Show Example with Furigana</button>
+{{/ex3_ja_furigana}}
+
+<!-- 4 -->
+<div id="moreSentencesWrapper">
+  {{#ex4_ja_furigana}}
+  <div id="sentence4">
+    <hr style="margin: 20px 0" />
+
+    <span id="exampleSentence4">
+      <span class="big-japanese">{{ex4_ja}}</span><br />
+    </span>
+    <span id="exampleSentence4WithFurigana">
+      <span class="big-japanese furigana-space"
+        >{{furigana:ex4_ja_furigana}}</span
+      ><br />
+    </span>
+  </div>
+  <span class="ex-en" style="line-height: 1.4">{{ex4_en}}</span>
+
+  <button id="toggleButton4" class="btn">Show Example with Furigana</button>
+  {{/ex4_ja_furigana}}
+
+  <!-- 5 -->
+  {{#ex5_ja_furigana}}
+  <div id="sentence5">
+    <hr style="margin: 20px 0" />
+
+    <span id="exampleSentence5">
+      <span class="big-japanese">{{ex5_ja}}</span><br />
+    </span>
+    <span id="exampleSentence5WithFurigana">
+      <span class="big-japanese furigana-space"
+        >{{furigana:ex5_ja_furigana}}</span
+      ><br />
+    </span>
+  </div>
+  <span class="ex-en" style="line-height: 1.4">{{ex5_en}}</span>
+
+  <button id="toggleButton5" class="btn">Show Example with Furigana</button>
+  {{/ex5_ja_furigana}}
+
+  <!-- 6 -->
+  {{#ex6_ja_furigana}}
+  <div id="sentence6">
+    <hr style="margin: 20px 0" />
+
+    <span id="exampleSentence6">
+      <span class="big-japanese">{{ex6_ja}}</span><br />
+    </span>
+    <span id="exampleSentence6WithFurigana">
+      <span class="big-japanese furigana-space"
+        >{{furigana:ex6_ja_furigana}}</span
+      ><br />
+    </span>
+  </div>
+  <span class="ex-en" style="line-height: 1.4">{{ex6_en}}</span>
+
+  <button id="toggleButton6" class="btn">Show Example with Furigana</button>
+  {{/ex6_ja_furigana}}
+
+  <!-- 7 -->
+  {{#ex7_ja_furigana}}
+  <div id="sentence7">
+    <hr style="margin: 20px 0" />
+
+    <span id="exampleSentence7">
+      <span class="big-japanese">{{ex7_ja}}</span><br />
+    </span>
+    <span id="exampleSentence7WithFurigana">
+      <span class="big-japanese furigana-space"
+        >{{furigana:ex7_ja_furigana}}</span
+      ><br />
+    </span>
+  </div>
+  <span class="ex-en" style="line-height: 1.4">{{ex7_en}}</span>
+
+  <button id="toggleButton7" class="btn">Show Example with Furigana</button>
+  {{/ex7_ja_furigana}}
+
+  <!-- 8 -->
+  {{#ex8_ja_furigana}}
+  <div id="sentence8">
+    <hr style="margin: 20px 0" />
+
+    <span id="exampleSentence8">
+      <span class="big-japanese">{{ex8_ja}}</span><br />
+    </span>
+    <span id="exampleSentence8WithFurigana">
+      <span class="big-japanese furigana-space"
+        >{{furigana:ex8_ja_furigana}}</span
+      ><br />
+    </span>
+  </div>
+  <span class="ex-en" style="line-height: 1.4">{{ex8_en}}</span>
+
+  <button id="toggleButton8" class="btn">Show Example with Furigana</button>
+  {{/ex8_ja_furigana}}
+
+  <!-- 9 -->
+  {{#ex9_ja_furigana}}
+  <div id="sentence9">
+    <hr style="margin: 20px 0" />
+
+    <span id="exampleSentence9">
+      <span class="big-japanese">{{ex9_ja}}</span><br />
+    </span>
+    <span id="exampleSentence9WithFurigana">
+      <span class="big-japanese furigana-space"
+        >{{furigana:ex9_ja_furigana}}</span
+      ><br />
+    </span>
+  </div>
+  <span class="ex-en" style="line-height: 1.4">{{ex9_en}}</span>
+
+  <button id="toggleButton9" class="btn">Show Example with Furigana</button>
+  {{/ex9_ja_furigana}}
+
+  <!-- 10 -->
+  {{#ex10_ja_furigana}}
+  <div id="sentence10">
+    <hr style="margin: 20px 0" />
+
+    <span id="exampleSentence10">
+      <span class="big-japanese">{{ex10_ja}}</span><br />
+    </span>
+    <span id="exampleSentence10WithFurigana">
+      <span class="big-japanese furigana-space"
+        >{{furigana:ex10_ja_furigana}}</span
+      ><br />
+    </span>
+  </div>
+  <span class="ex-en" style="line-height: 1.4">{{ex10_en}}</span>
+
+  <button id="toggleButton10" class="btn">Show Example with Furigana</button>
+  {{/ex10_ja_furigana}}
+</div>
+
+<!-- note -->
+{{#note}}
+<hr style="margin: 20px 0" />
+<span style="line-height: 1.4"
+  >Note:
+  <span
+    style="
+      font-family: MS Mincho, Noto Serif JP, sans-serif;
+      font-size: 36px furigana-space;
+    "
+    >{{furigana:note}}</span
+  ></span
+>
+{{/note}}
+
+<script>
+  function handlingMoreLessSentences() {
+    const sentenceMoreLessBtn = document.getElementById("sentenceMoreLessBtn");
+    const moreSentencesWrapper = document.getElementById(
+      "moreSentencesWrapper"
+    );
+
+    const LS_KEY = "isShowingMore";
+
+    function setLSStatus(state) {
+      localStorage.setItem(LS_KEY, state);
+      return state;
+    }
+
+    let LSMoreSentenceStatus =
+      localStorage.getItem(LS_KEY) || setLSStatus("true");
+
+    let isShowingMore = LSMoreSentenceStatus === "true";
+
+    function displayExpandCollaspe() {
+      moreSentencesWrapper.style.display = isShowingMore ? "block" : "none";
+      sentenceMoreLessBtn.textContent = isShowingMore
+        ? "Show less examples (showing 10)"
+        : "Show more examples (showing 3)";
+    }
+    displayExpandCollaspe();
+
+    sentenceMoreLessBtn.addEventListener("click", () => {
+      isShowingMore = !isShowingMore;
+      localStorage.setItem("isShowingMore", isShowingMore.toString());
+      displayExpandCollaspe();
+    });
+  }
+
+  handlingMoreLessSentences();
+
+  function toggleFurigana(buttonId, sentenceId, sentenceWithFuriganaId, i) {
+    const button = document.getElementById(buttonId) || null;
+    const sentence = document.getElementById(sentenceId) || null;
+    const sentenceWithFurigana =
+      document.getElementById(sentenceWithFuriganaId) || null;
+
+    if (!button || !sentence || !sentenceWithFurigana) {
+      return; // Skip this iteration if any element is missing
+    }
+
+    function addSentenceNumber() {
+      const sentenceNumberStr = `${i}.`;
+      const sentenceInside = sentence.querySelector(".big-japanese");
+      const sentenceFInside =
+        sentenceWithFurigana.querySelector(".big-japanese");
+
+      if (sentenceInside) {
+        sentenceInside.insertAdjacentText("afterbegin", sentenceNumberStr);
+      }
+      if (sentenceFInside) {
+        sentenceFInside.insertAdjacentText("afterbegin", sentenceNumberStr);
+      }
+    }
+
+    addSentenceNumber();
+
+    function setLSStatus(state) {
+      localStorage.setItem(localStorageFuriganaStatusKey, state);
+      return state;
+    }
+
+    const localStorageFuriganaStatusKey = `grammarExample${i}Furigana`;
+
+    let LSFuriganaStatus =
+      localStorage.getItem(localStorageFuriganaStatusKey) ||
+      setLSStatus("false");
+
+    let furiganaVisible =
+      localStorage.getItem(localStorageFuriganaStatusKey) === "true";
+
+    function updateDisplay() {
+      sentence.style.display = furiganaVisible ? "none" : "inline-block";
+      sentenceWithFurigana.style.display = furiganaVisible
+        ? "inline-block"
+        : "none";
+      button.textContent = !furiganaVisible ? "Show Furigana" : "Hide Furigana";
+    }
+
+    updateDisplay();
+
+    button.addEventListener("click", () => {
+      furiganaVisible = !furiganaVisible;
+      localStorage.setItem(localStorageFuriganaStatusKey, furiganaVisible);
+      updateDisplay();
+    });
+  }
+
+  for (let i = 1; i <= 10; i++) {
+    toggleFurigana(
+      `toggleButton${i}`,
+      `exampleSentence${i}`,
+      `exampleSentence${i}WithFurigana`,
+      `${i}`
+    );
+  }
+</script>
+
+<script>
+  /* AJT Japanese JS 24.10.8.1 */
+  /* DO NOT EDIT! This code will be overwritten by AJT Japanese. */
+  function ajt__kana_to_moras(text) {
+    return text.match(/.[°゚]?[ァィゥェォャュョぁぃぅぇぉゃゅょ]?/gu);
+  }
+  function ajt__norm_handakuten(text) {
+    return text.replace(/\u{b0}/gu, "\u{309a}");
+  }
+  function ajt__make_pattern(kana, pitch_type, pitch_num) {
+    const moras = ajt__kana_to_moras(ajt__norm_handakuten(kana));
+    switch (pitch_type) {
+      case "atamadaka":
+        return (
+          `<span class="ajt__HL">${moras[0]}</span>` +
+          `<span class="ajt__L">${moras.slice(1).join("")}</span>` +
+          `<span class="ajt__pitch_number_tag">1</span>`
+        );
+        break;
+      case "heiban":
+        return (
+          `<span class="ajt__LH">${moras[0]}</span>` +
+          `<span class="ajt__H">${moras.slice(1).join("")}</span>` +
+          `<span class="ajt__pitch_number_tag">0</span>`
+        );
+        break;
+      case "odaka":
+        return (
+          `<span class="ajt__LH">${moras[0]}</span>` +
+          `<span class="ajt__HL">${moras.slice(1).join("")}</span>` +
+          `<span class="ajt__pitch_number_tag">${moras.length}</span>`
+        );
+        break;
+      case "nakadaka":
+        return (
+          `<span class="ajt__LH">${moras[0]}</span>` +
+          `<span class="ajt__HL">${moras
+            .slice(1, Number(pitch_num))
+            .join("")}</span>` +
+          `<span class="ajt__L">${moras
+            .slice(Number(pitch_num))
+            .join("")}</span>` +
+          `<span class="ajt__pitch_number_tag">${pitch_num}</span>`
+        );
+        break;
+    }
+  }
+  function ajt__format_new_ruby(kanji, readings) {
+    if (readings.length > 1) {
+      return `<ruby>${ajt__format_new_ruby(
+        kanji,
+        readings.slice(0, -1)
+      )}</ruby><rt>${readings.slice(-1)}</rt>`;
+    } else {
+      return `${kanji}<rt>${readings.join("")}</rt>`;
+    }
+  }
+  function ajt__zip(array1, array2) {
+    let zipped = [];
+    const size = Math.min(array1.length, array2.length);
+    for (let i = 0; i < size; i++) {
+      zipped.push([array1[i], array2[i]]);
+    }
+    return zipped;
+  }
+  function ajt__make_accent_list_item(kana_reading, pitch_accent) {
+    const list_item = document.createElement("li");
+    for (const [reading_part, pitch_part] of ajt__zip(
+      kana_reading.split("・"),
+      pitch_accent.split(",")
+    )) {
+      const [pitch_type, pitch_num] = pitch_part.split("-");
+      const pattern = ajt__make_pattern(reading_part, pitch_type, pitch_num);
+      list_item.insertAdjacentHTML(
+        "beforeend",
+        `<span class="ajt__downstep_${pitch_type}">${pattern}</span>`
+      );
+    }
+    return list_item;
+  }
+  function ajt__make_accents_list(ajt_span) {
+    const accents = document.createElement("ul");
+    for (const accent_group of ajt_span.getAttribute("pitch").split(" ")) {
+      accents.appendChild(
+        ajt__make_accent_list_item(...accent_group.split(":"))
+      );
+    }
+    return accents;
+  }
+  function ajt__make_popup_div(content) {
+    const frame_top = document.createElement("div");
+    frame_top.classList.add("ajt__frame_title");
+    frame_top.innerText = "Information";
+    const frame_bottom = document.createElement("div");
+    frame_bottom.classList.add("ajt__frame_content");
+    frame_bottom.appendChild(content);
+    const popup = document.createElement("div");
+    popup.classList.add("ajt__info_popup");
+    popup.appendChild(frame_top);
+    popup.appendChild(frame_bottom);
+    return popup;
+  }
+  function ajt__find_word_info_popup(word_span) {
+    return word_span.querySelector(".ajt__info_popup");
+  }
+  function ajt__find_popup_x_corners(popup_div) {
+    const elem_rect = popup_div.getBoundingClientRect();
+    const right_corner_x = elem_rect.x + elem_rect.width;
+    return {
+      x_start: elem_rect.x,
+      x_end: right_corner_x,
+      shifted_x_start: elem_rect.x + elem_rect.width / 2,
+      shifted_x_end: right_corner_x + elem_rect.width / 2,
+    };
+  }
+  function ajt__word_info_on_mouse_enter(word_span) {
+    const popup_div = ajt__find_word_info_popup(word_span);
+    if (popup_div) {
+      ajt__word_info_on_mouse_leave(word_span);
+      const x_pos = ajt__find_popup_x_corners(popup_div);
+      if (x_pos.x_start < 0) {
+        popup_div.classList.add("ajt__left-corner");
+        popup_div.style.setProperty(
+          "--shift-x",
+          `${Math.ceil(-x_pos.x_start)}px`
+        );
+      } else if (x_pos.shifted_x_end < window.innerWidth) {
+        popup_div.classList.add("ajt__in-middle");
+      }
+    }
+  }
+  function ajt__word_info_on_mouse_leave(word_span) {
+    const popup_div = ajt__find_word_info_popup(word_span);
+    if (popup_div) {
+      popup_div.classList.remove("ajt__left-corner", "ajt__in-middle");
+    }
+  }
+  function ajt__adjust_popup_position_on_mouse_enter(word_info_span) {
+    word_info_span.addEventListener("mouseenter", (event) =>
+      ajt__word_info_on_mouse_enter(event.currentTarget)
+    );
+    word_info_span.addEventListener("mouseleave", (event) =>
+      ajt__word_info_on_mouse_leave(event.currentTarget)
+    );
+  }
+  function ajt__format_readings_as_list(readings) {
+    const readings_items = readings
+      .map((reading) => `<li>${reading}</li>`)
+      .join("");
+    const list_elem = document.createElement("ol");
+    list_elem.classList.add("ajt__readings_list");
+    list_elem.insertAdjacentHTML("beforeend", readings_items);
+    return list_elem;
+  }
+  function ajt__find_kanji_readings(ruby_tag) {
+    const separators = /[\s;,.、・。]+/iu;
+    const kanji = (
+      ruby_tag.querySelector("rb") || ruby_tag.firstChild
+    ).textContent.trim();
+    const readings = ruby_tag
+      .querySelector("rt")
+      .textContent.split(separators)
+      .map((str) => str.trim())
+      .filter((str) => str.length);
+    return { kanji: kanji, readings: readings };
+  }
+  function ajt__reformat_multi_furigana() {
+    const max_inline = 2;
+    document
+      .querySelectorAll("ruby:not(ruby ruby):not(.ajt__furigana_list ruby)")
+      .forEach((ruby) => {
+        try {
+          const { kanji, readings } = ajt__find_kanji_readings(ruby);
+          if (readings.length > 1) {
+            ruby.innerHTML = ajt__format_new_ruby(
+              kanji,
+              readings.slice(0, max_inline)
+            );
+          }
+          if (
+            readings.length > max_inline &&
+            !ruby.matches(".ajt__word_info ruby")
+          ) {
+            const content_ul = ajt__format_readings_as_list(readings);
+            const popup = ajt__make_popup_div(content_ul);
+            const wrapper = document.createElement("span");
+            ruby.replaceWith(wrapper);
+            wrapper.appendChild(ruby);
+            wrapper.appendChild(popup);
+            wrapper.classList.add("ajt__furigana_list");
+            ajt__adjust_popup_position_on_mouse_enter(wrapper);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+  }
+  function ajt__create_popups() {
+    for (const [idx, span] of document
+      .querySelectorAll(".ajt__word_info")
+      .entries()) {
+      if (span.matches(".jpsentence .background *")) {
+        continue;
+      }
+      if (ajt__find_word_info_popup(span)) {
+        continue;
+      }
+      try {
+        const content_ul = ajt__make_accents_list(span);
+        const popup = ajt__make_popup_div(content_ul);
+        popup.setAttribute("ajt__popup_idx", idx);
+        span.setAttribute("ajt__popup_idx", idx);
+        span.appendChild(popup);
+        ajt__adjust_popup_position_on_mouse_enter(span);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+  function ajt__main() {
+    ajt__create_popups();
+    ajt__reformat_multi_furigana();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", ajt__main);
+  } else {
+    ajt__main();
+  }
+</script>
