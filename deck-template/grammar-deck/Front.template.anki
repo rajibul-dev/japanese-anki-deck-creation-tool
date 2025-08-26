@@ -10,7 +10,55 @@
 
 <span class="big-japanese front">{{furigana:grammar_furigana}}</span>
 
+<div
+  style="
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    max-width: 28ch;
+    line-height: 1.5;
+    margin-inline: auto;
+  "
+  id="hintingSentence"
+  class="fancy-font not-in-back"
+>
+  {{ex1_ja}}
+</div>
+<button id="randomExampleButton" class="btn front not-in-back">
+  Show another sentence
+</button>
+
 <script>
+  // random example sentence sentence for hinting
+  function seteRandomExampleOnFront() {
+    const examples = [
+      "{{ex1_ja}}",
+      "{{ex2_ja}}",
+      "{{ex3_ja}}",
+      "{{ex4_ja}}",
+      "{{ex5_ja}}",
+      "{{ex6_ja}}",
+      "{{ex7_ja}}",
+      "{{ex8_ja}}",
+      "{{ex9_ja}}",
+      "{{ex10_ja}}",
+    ];
+
+    let randomIndex = Math.trunc(Math.random() * examples.length);
+    const pickedSentence = examples[randomIndex];
+
+    const hintingSentenceEl = document.getElementById("hintingSentence");
+
+    hintingSentenceEl.innerHTML = pickedSentence;
+  }
+
+  seteRandomExampleOnFront();
+
+  function handleRandomSentenceOnFrontBtn() {
+    const randomExampleBtn = document.getElementById("randomExampleButton");
+    randomExampleBtn.addEventListener("click", seteRandomExampleOnFront);
+  }
+  handleRandomSentenceOnFrontBtn();
+
   // function to make the switching font work
   function fontSwitch() {
     const FONT_SWITCH_BUTTON = true;

@@ -55,6 +55,10 @@ rt {
   background-color: white;
 }
 
+.fancy-font {
+  font-family: MS Mincho, Noto Serif JP, serif;
+}
+
 .big-japanese {
   display: inline-block;
   /* font-size: 48px; */

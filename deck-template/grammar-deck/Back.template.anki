@@ -219,6 +219,15 @@
 {{/note}}
 
 <script>
+  // remove not-in-back components
+  function removeNotInBackEl() {
+    const notInBackEls = document.querySelectorAll(".not-in-back");
+    notInBackEls.forEach((el) => {
+      el.remove();
+    });
+  }
+  removeNotInBackEl();
+
   function handlingMoreLessSentences() {
     const sentenceMoreLessBtn = document.getElementById("sentenceMoreLessBtn");
     const moreSentencesWrapper = document.getElementById(
