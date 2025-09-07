@@ -29,35 +29,45 @@
 
 <script>
   // random example sentence sentence for hinting
-  function seteRandomExampleOnFront() {
-    const examples = [
-      "{{ex1_ja}}",
-      "{{ex2_ja}}",
-      "{{ex3_ja}}",
-      "{{ex4_ja}}",
-      "{{ex5_ja}}",
-      "{{ex6_ja}}",
-      "{{ex7_ja}}",
-      "{{ex8_ja}}",
-      "{{ex9_ja}}",
-      "{{ex10_ja}}",
-    ];
+  function wrapperForRandomExampleFunc() {
+    let currentIndex;
 
-    let randomIndex = Math.trunc(Math.random() * examples.length);
-    const pickedSentence = examples[randomIndex];
+    function randomNumberPicker(endNum) {
+      return Math.trunc(Math.random() * endNum);
+    }
 
-    const hintingSentenceEl = document.getElementById("hintingSentence");
+    function seteRandomExampleOnFront() {
+      const examples = [
+        "{{ex1_ja}}",
+        "{{ex2_ja}}",
+        "{{ex3_ja}}",
+        "{{ex4_ja}}",
+        "{{ex5_ja}}",
+        "{{ex6_ja}}",
+        "{{ex7_ja}}",
+        "{{ex8_ja}}",
+        "{{ex9_ja}}",
+        "{{ex10_ja}}",
+      ];
 
-    hintingSentenceEl.innerHTML = pickedSentence;
+      let randomIndex = randomNumberPicker(examples.length);
+      while (randomIndex === currentIndex) {
+        randomIndex = randomNumberPicker(examples.length);
+      }
+      const pickedSentence = examples[randomIndex];
+
+      const hintingSentenceEl = document.getElementById("hintingSentence");
+
+      hintingSentenceEl.innerHTML = pickedSentence;
+    }
+    function handleRandomSentenceOnFrontBtn() {
+      const randomExampleBtn = document.getElementById("randomExampleButton");
+      randomExampleBtn.addEventListener("click", seteRandomExampleOnFront);
+    }
+    handleRandomSentenceOnFrontBtn();
   }
 
-  seteRandomExampleOnFront();
-
-  function handleRandomSentenceOnFrontBtn() {
-    const randomExampleBtn = document.getElementById("randomExampleButton");
-    randomExampleBtn.addEventListener("click", seteRandomExampleOnFront);
-  }
-  handleRandomSentenceOnFrontBtn();
+  wrapperForRandomExampleFunc();
 
   // function to make the switching font work
   function fontSwitch() {
