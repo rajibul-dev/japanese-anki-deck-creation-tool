@@ -69,6 +69,7 @@
 
       hintingSentenceEl.innerHTML = pickedSentence;
     }
+
     function handleRandomSentenceOnFrontBtn() {
       const randomExampleBtn = document.getElementById("randomExampleButton");
       randomExampleBtn.addEventListener("click", seteRandomExampleOnFront);
@@ -77,12 +78,6 @@
   }
 
   wrapperForRandomExampleFunc();
-
-  function handleRandomSentenceOnFrontBtn() {
-    const randomExampleBtn = document.getElementById("randomExampleButton");
-    randomExampleBtn.addEventListener("click", seteRandomExampleOnFront);
-  }
-  handleRandomSentenceOnFrontBtn();
 
   // function to make the switching font work
   function fontSwitch() {
