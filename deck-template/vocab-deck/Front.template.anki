@@ -40,6 +40,7 @@
   // random example sentence sentence for hinting
   function wrapperForRandomExampleFunc() {
     let currentIndex;
+    seteRandomExampleOnFront();
 
     function randomNumberPicker(endNum) {
       return Math.trunc(Math.random() * endNum);
@@ -58,15 +59,12 @@
         "{{ex9_ja}}",
         "{{ex10_ja}}",
       ];
-
       let randomIndex = randomNumberPicker(examples.length);
       while (randomIndex === currentIndex) {
         randomIndex = randomNumberPicker(examples.length);
       }
       const pickedSentence = examples[randomIndex];
-
       const hintingSentenceEl = document.getElementById("hintingSentence");
-
       hintingSentenceEl.innerHTML = pickedSentence;
     }
 
@@ -74,6 +72,7 @@
       const randomExampleBtn = document.getElementById("randomExampleButton");
       randomExampleBtn.addEventListener("click", seteRandomExampleOnFront);
     }
+
     handleRandomSentenceOnFrontBtn();
   }
 
