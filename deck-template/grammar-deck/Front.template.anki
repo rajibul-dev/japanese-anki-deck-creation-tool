@@ -10,6 +10,9 @@
 
 <span class="big-japanese front">{{furigana:grammar_furigana}}</span>
 
+<button id="randomExampleButton" class="btn front not-in-back">
+  Show another sentence
+</button>
 <div
   style="
     font-size: 2rem;
@@ -23,9 +26,6 @@
 >
   {{ex1_ja}}
 </div>
-<button id="randomExampleButton" class="btn front not-in-back">
-  Show another sentence
-</button>
 
 <script>
   // random example sentence sentence for hinting

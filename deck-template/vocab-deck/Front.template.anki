@@ -19,6 +19,9 @@
 <!-- toggle button -->
 <button id="toggleButton" class="btn front">Show Furigana</button>
 
+<button id="randomExampleButton" class="btn front not-in-back">
+  Show another sentence
+</button>
 <div
   style="
     font-size: 2rem;
@@ -32,9 +35,6 @@
 >
   {{ex1_ja}}
 </div>
-<button id="randomExampleButton" class="btn front not-in-back">
-  Show another sentence
-</button>
 
 <script>
   // random example sentence sentence for hinting
