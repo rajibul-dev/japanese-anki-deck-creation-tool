@@ -35,6 +35,9 @@
 >
   {{ex1_ja}}
 </div>
+<button id="firstExampleBtn" class="btn front not-in-back">
+  First sentence (simple)
+</button>
 
 <script>
   // random example sentence sentence for hinting
@@ -77,6 +80,21 @@
   }
 
   wrapperForRandomExampleFunc();
+
+  // showing first example sentence on the frontside
+  function showFirstExampleSentence() {
+    const targetBtn = document.getElementById("firstExampleBtn");
+
+    function action() {
+      const firstSentence = "{{ex1_ja}}";
+      const hintingSentenceEl = document.getElementById("hintingSentence");
+      hintingSentenceEl.innerHTML = firstSentence;
+    }
+
+    targetBtn.addEventListener("click", action);
+  }
+
+  showFirstExampleSentence();
 
   // function to make the switching font work
   function fontSwitch() {
